@@ -38,7 +38,7 @@ if __name__ == '__main__':
         print(classification_report(y_test,predictions))
         print("Overall accuracy: {}".format(accuracy_score(y_test, predictions)))
 
-        ret = model.predict(["The movie is good"])[0]
+        ret = model.predict(["Is this line even seen?"])[-1]
         print(ret)
         ret = model.predict(["The movie is bad"])[0]
         print(ret)
