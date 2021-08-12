@@ -10,16 +10,16 @@ from sklearn.linear_model import LogisticRegression
 import pickle
 
 def getData():
-        airline_train = read_csv("Airline-Sentiment.csv", sep=",", encoding="ISO-8859-1")
-        airline_train = airline_train.rename(index=str,
-                                             columns={"tweet_id": "id", "airline_sentiment": "sentiment", "text": 
+        review_train = read_csv("rotten_tomatoes_movies.csv", sep=",", encoding="ISO-8859-1")
+        review_train = review_train.rename(index=str,
+                                             columns={"rotten_tomatoes_link": "id", "tomatometer_status": "sentiment", "critics_consensus": 
                                                       "text"})
-        return airline_train
+        return review_train
 
 if __name__ == '__main__':
-        tweets = getData()
-        X = tweets["text"]
-        y = tweets["sentiment"]
+        critics = getData()
+        X = critics["text"]
+        y = critics["sentiment"]
 
         tf_transformer = TfidfTransformer()
 
