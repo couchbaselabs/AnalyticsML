@@ -10,7 +10,7 @@ from sklearn.linear_model import LogisticRegression
 import pickle
 
 def getData():
-        review_train = read_csv("rotten_tomatoes_movies.csv", sep=",", encoding="ISO-8859-1")
+        review_train = read_csv("rotten_tomatoes_movies_train.csv", sep=",", encoding="ISO-8859-1")
         review_train = review_train.rename(index=str,
                                              columns={"rotten_tomatoes_link": "id", "tomatometer_status": "sentiment", "critics_consensus": 
                                                       "text"})
